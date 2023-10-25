@@ -26,11 +26,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.ENGLISH);
 
-        // escriu aqui el codi
+        //Instancia Game
         Game game = new Game();
 
         game.width = scanner.nextInt();
         game.height = scanner.nextInt();
+
+        //Instancia Player y Coords
+        game.player1 = new Player();
+        game.player1.position = new Coords();
+        game.player2 = new Player();
+        game.player2.position = new Coords();
 
         game.player1.name = scanner.next();
         game.player1.score = scanner.nextInt();
