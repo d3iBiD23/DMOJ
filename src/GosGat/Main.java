@@ -1,12 +1,14 @@
 package GosGat;
 class Gos {
     public void lladrar(){
+
         System.out.println("Guau, guau");
     }
 }
 
 class Gat {
     public void miolar(){
+
         System.out.println("Miau, miau");
     }
 }
