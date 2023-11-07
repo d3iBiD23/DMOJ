@@ -2,11 +2,6 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class contractarunxef {
-    public String nom;
-    public int edat;
-    public String nivellEstudis;
-    public int anys;
-    public String tipusCuina;
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.ENGLISH);
