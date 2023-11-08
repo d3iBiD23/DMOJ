@@ -2,12 +2,19 @@ package ElPenjat;
 import java.util.*;
 
 class Ahorcado {
-    int fallos;
-    boolean completado;
-    String palabra;
-    char descubierta;
-    int length;
+    public int fallos;
+    public boolean completado;
+    public String palabra;
+    public char [] descubierta;
 
+    public Ahorcado(String palabra){
+        this.palabra = palabra;
+        this.fallos = 0;
+        this.completado = false;
+        this.descubierta = new char[palabra.length()];
+
+        Arrays.fill(this.descubierta, '_');
+    }
 }
 
 public class Main {
