@@ -7,10 +7,10 @@ import java.util.regex.*;
 class Led {
     boolean state;
     public void switchOn(){
-        state = true;
+        this.state = true;
     }
     public void switchOff(){
-        state = false;
+        this.state = false;
     }
     void draw(){
         if(state){
