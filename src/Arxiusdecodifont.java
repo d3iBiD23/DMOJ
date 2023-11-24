@@ -6,13 +6,13 @@ public class Arxiusdecodifont {
         scanner.useLocale(Locale.ENGLISH);
 
         String nomArxiu = scanner.next();
-        String tipusArxiu = scanner.nextLine();
+        String tipusArxiu = scanner.nextLine().trim();
         String nomArxiu2 = scanner.next();
-        String tipusArxiu2 = scanner.nextLine();
+        String tipusArxiu2 = scanner.nextLine().trim();
         String nomArxiu3 = scanner.next();
-        String tipusArxiu3 = scanner.nextLine();
+        String tipusArxiu3 = scanner.nextLine().trim();
         String nomArxiu4 = scanner.next();
-        String tipusArxiu4 = scanner.nextLine();
+        String tipusArxiu4 = scanner.nextLine().trim();
 
         System.out.println(tipusArxiu4 + " " + nomArxiu4);
         System.out.println(tipusArxiu3 + " " + nomArxiu3);
