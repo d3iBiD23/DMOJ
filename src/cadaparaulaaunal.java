@@ -12,8 +12,6 @@ public class cadaparaulaaunal {
             paraules[i] = scanner.next();
         }
 
-        scanner.close();
-
         for (String paraula : paraules) {
             System.out.println(paraula);
         }
