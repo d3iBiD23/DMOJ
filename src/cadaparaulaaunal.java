@@ -6,8 +6,7 @@ public class cadaparaulaaunal {
         String[] paraules = SetArray();
         ViewArray(paraules);
     }
-    private static void ViewArray(String[] array)
-    {
+    private static void ViewArray(String[] array) {
         for (String paraula : array) {
             System.out.println(paraula);
         }
@@ -20,7 +19,7 @@ public class cadaparaulaaunal {
 
         for (int i = 0; i < 5; i++) {
              paraules[i] = scanner.next();
-         }
+        }
         return paraules;
     }
 }
