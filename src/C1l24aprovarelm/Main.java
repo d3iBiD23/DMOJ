@@ -13,11 +13,11 @@ class Modul {
 }
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        scanner.useLocale(Locale.ENGLISH);
+        Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.ENGLISH);
 
         Modul m1 = new Modul();
 
-        System.out.println(m1.aprovat(scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt(), scanner.nextInt()));
+        System.out.println(m1.aprovat(sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt(), sc.nextInt()));
     }
 }
