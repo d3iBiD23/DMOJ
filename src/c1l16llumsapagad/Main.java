@@ -26,6 +26,8 @@ public class Main {
         Llum llum2 = new Llum(sc.nextBoolean());
         Llum llum3 = new Llum(sc.nextBoolean());
         Llum llum4 = new Llum(sc.nextBoolean());
+        
+        sc.close();
 
         boolean totesEnceses = llum1.comprovarLlum() && llum2.comprovarLlum() && llum3.comprovarLlum() && llum4.comprovarLlum();
 

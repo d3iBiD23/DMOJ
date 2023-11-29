@@ -14,6 +14,8 @@ public class C1l111perimetred {
 
         int y2 = sc.nextInt();
 
+        sc.close();
+
         int base = Math.abs(x2 - x1);
         int altura = Math.abs(y2 - y1);
         int perimetro = 2 * (base + altura);
