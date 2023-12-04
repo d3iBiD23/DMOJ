@@ -11,21 +11,6 @@ class Modul {
         return aprovatuf1 && aprovatuf2 && aprovatuf3;
     }
 }
-
-class Alumne {
-    private Modul m01;
-    private Modul m02;
-    private Modul m03;
-
-    public Alumne(Modul m01, Modul m02, Modul m03) {
-        this.m01 = m01;
-        this.m02 = m02;
-        this.m03 = m03;
-    }
-    public boolean aprovatCurs(){
-        return (m01.modulAprovat() && m02.modulAprovat() && m03.modulAprovat());
-    }
-}
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
