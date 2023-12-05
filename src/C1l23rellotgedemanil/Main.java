@@ -48,7 +48,7 @@ public class Main {
         // Donat el input: 2 30 0
         Rellotge rellotge = new Rellotge(sc.nextInt(), sc.nextInt(), sc.nextInt());
 
-        // Avançar el temps 5 segons sense cap bucle ni condicional
+
         rellotge.avancaTemps(5).avancaTemps(0).avancaTemps(0);
 
         // Output esperat: 75.0 180.0 0.0
