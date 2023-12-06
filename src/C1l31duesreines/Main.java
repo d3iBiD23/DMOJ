@@ -29,8 +29,7 @@ public class Main {
         Reina r2 = new Reina(sc.nextInt(), sc.nextInt());
 
         boolean amenacenL = (r1.getX() == r2.getX() || r1.getY() == r2.getY());
-        boolean amenacenC = (r1.getX() == r1.getY() && r2.getX() == r2.getY());
-        //boolean amenacenCl = ();
+        boolean amenacenC = (Math.abs(r1.getX() - r2.getX()) == (Math.abs(r1.getY() - r2.getY())));
 
         boolean amenacen = (amenacenL || amenacenC);
 
