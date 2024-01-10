@@ -21,6 +21,7 @@ abstract class UF{
 
 class UF1 extends UF{
 
+
     public UF1(int pTotals, int pEntregades, int nExamen) {
         super(pTotals, pEntregades, nExamen);
     }
