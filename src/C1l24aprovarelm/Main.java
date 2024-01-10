@@ -14,17 +14,22 @@ abstract class UF{
         this.pEntregades = pEntregades;
         this.nExamen = nExamen;
     }
-    public abstract boolean aprova();
+    public boolean aprovar(){
+        return true;
+    }
+
+    public boolean aprovar(int actitud){
+    }
 }
 
 class UF1 extends UF{
-    @Override
-    public boolean aprova() {
-        return false;
-    }
 
     public UF1(int pTotals, int pEntregades, int nExamen) {
         super(pTotals, pEntregades, nExamen);
+    }
+    @Override
+    public boolean aprovar(){
+
     }
 }
 class UF2 extends UF{
@@ -32,10 +37,9 @@ class UF2 extends UF{
     public UF2(int pTotals, int pEntregades, int nExamen) {
         super(pTotals, pEntregades, nExamen);
     }
-
     @Override
-    public boolean aprova() {
-        return false;
+    public boolean aprovar(){
+
     }
 }
 class UF3 extends UF{
@@ -43,10 +47,9 @@ class UF3 extends UF{
     public UF3(int pTotals, int pEntregades, int nExamen) {
         super(pTotals, pEntregades, nExamen);
     }
-
     @Override
-    public boolean aprova() {
-        return false;
+    public boolean aprovar(){
+
     }
 }
 public class Main {
