@@ -7,6 +7,7 @@ abstract class UF{
     public int pTotals;
     public int pEntregades;
     public int nExamen;
+    public boolean resultat;
 
     public UF(int pTotals, int pEntregades, int nExamen) {
         this.pTotals = pTotals;
