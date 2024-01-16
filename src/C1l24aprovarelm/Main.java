@@ -19,8 +19,6 @@ abstract class UF{
 }
 
 class UF1 extends UF{
-
-
     public UF1(int pTotals, int pEntregades, int nExamen) {
         super(pTotals, pEntregades, nExamen);
     }
@@ -30,7 +28,6 @@ class UF1 extends UF{
     }
 }
 class UF2 extends UF{
-
     public UF2(int pTotals, int pEntregades, int nExamen) {
         super(pTotals, pEntregades, nExamen);
     }
@@ -64,7 +61,6 @@ class Modul{
         return uf1.aprovar() && uf2.aprovar() && uf3.aprovar();
     }
 }
-
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
