@@ -26,14 +26,11 @@ class Paella {
         float costeGamba = cantidadGamba * precioKGamba;
         float costeTotal = costeArroz + costeGamba;
 
-        String formatoArroz = cantidadArroz % 1 == 0 ? "%.1f" : "%.2f";
-        String formatoGamba = cantidadGamba % 1 == 0 ? "%.1f" : "%.2f";
-        String formatoEuros = costeTotal % 1 == 0 ? "%.1f" : "%.2f";
-
-        return String.format(Locale.US,
-                formatoArroz + " kg arros\n" + formatoGamba + " kg gambes\n" +
-                        formatoEuros + " euros arros\n" + formatoEuros + " euros gambes\nTOTAL: " + formatoEuros + " euros",
-                cantidadArroz, cantidadGamba, costeArroz, costeGamba, costeTotal);
+        return  cantidadArroz + " kg arros\n" +
+                cantidadGamba + " kg gambes\n" +
+                costeArroz + " euros arros\n" +
+                costeGamba + " euros gambes\n" +
+                "TOTAL: " + costeTotal + " euros";
     }
 }
 
