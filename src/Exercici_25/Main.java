@@ -7,7 +7,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         float n1 = sc.nextFloat();
-
         float n2 = sc.nextFloat();
 
         System.out.println(n1 * n2);

@@ -4,8 +4,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 class Paella {
-    public final float proporcioArroz;
-    public final float proporcioGamba;
+    private final float proporcioArroz;
+    private final float proporcioGamba;
     private int comensales;
     private float precioKArroz;
     private float precioKGamba;
