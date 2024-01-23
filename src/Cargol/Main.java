@@ -3,18 +3,6 @@ package Cargol;
 import java.util.Locale;
 import java.util.Scanner;
 
-class Pal{
-    private int altura;
-
-    public Pal(int altura) {
-        this.altura = altura;
-    }
-
-    public int getAltura() {
-        return altura;
-    }
-}
-
 class Cargol{
     int mPujats;
     int mRelliscats;
@@ -24,8 +12,7 @@ class Cargol{
         this.mRelliscats = mRelliscats;
     }
 
-    public int calcularDiasNecessaris(Pal pal) {
-        int alturaPal = pal.getAltura();
+    public int calcularDiasNecessaris(int alturaPal) {
         int metresFinals = mPujats - mRelliscats;
 
         if (metresFinals >= alturaPal){
@@ -41,11 +28,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.ENGLISH);
 
-        Pal pal = new Pal(sc.nextInt());
+        int alturaPal = sc.nextInt();
 
         Cargol cargol = new Cargol(sc.nextInt(), sc.nextInt());
 
-        System.out.println(cargol.calcularDiasNecessaris(pal));
+        System.out.println(cargol.calcularDiasNecessaris(alturaPal));
 
     }
 }
