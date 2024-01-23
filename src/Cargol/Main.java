@@ -11,7 +11,6 @@ class Cargol{
         this.mPujats = mPujats;
         this.mRelliscats = mRelliscats;
     }
-
     public int calcularDiasNecessaris(int alturaPal) {
         int metresFinals = mPujats - mRelliscats;
 
@@ -33,6 +32,5 @@ public class Main {
         Cargol cargol = new Cargol(sc.nextInt(), sc.nextInt());
 
         System.out.println(cargol.calcularDiasNecessaris(alturaPal));
-
     }
 }
