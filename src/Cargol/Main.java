@@ -4,21 +4,22 @@ import java.util.Locale;
 import java.util.Scanner;
 
 class Cargol{
-    int mPujats;
-    int mRelliscats;
+    private int metresPujats;
+    private int metresRelliscats;
 
-    public Cargol(int mPujats, int mRelliscats) {
-        this.mPujats = mPujats;
-        this.mRelliscats = mRelliscats;
+    public Cargol(int metresPujats, int metresRelliscats) {
+        this.metresPujats = metresPujats;
+        this.metresRelliscats = metresRelliscats;
     }
-    public int calcularDiasNecessaris(int alturaPal) {
-        int metresFinals = mPujats - mRelliscats;
 
-        if (metresFinals >= alturaPal){
+    public int calcularDiesNecessaris(int alturaPal){
+        int distanciaNetaDiaria = this.metresPujats - this.metresRelliscats;
+
+        if (distanciaNetaDiaria == alturaPal){
             return 1;
         }
 
-        int diesNecessaris = (alturaPal - mPujats + metresFinals - 1) / metresFinals;
+        int diesNecessaris = (alturaPal - metresPujats + distanciaNetaDiaria - 1) / distanciaNetaDiaria;
         return diesNecessaris + 1;
     }
 }
@@ -29,8 +30,10 @@ public class Main {
 
         int alturaPal = sc.nextInt();
 
-        Cargol cargol = new Cargol(sc.nextInt(), sc.nextInt());
+        Cargol c = new Cargol(sc.nextInt(), sc.nextInt());
 
-        System.out.println(cargol.calcularDiasNecessaris(alturaPal));
+        System.out.println(c.calcularDiesNecessaris(alturaPal));
+
+        sc.close();
     }
 }
