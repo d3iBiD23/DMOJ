@@ -17,10 +17,10 @@ class Cargol{
 
         if (distanciaNetaDiaria == alturaPal){
             return 1;
+        }else {
+            int diesNecessaris = (alturaPal - metresPujats + distanciaNetaDiaria - 1) / distanciaNetaDiaria;
+            return diesNecessaris + 1;
         }
-
-        int diesNecessaris = (alturaPal - metresPujats + distanciaNetaDiaria - 1) / distanciaNetaDiaria;
-        return diesNecessaris + 1;
     }
 }
 public class Main {
