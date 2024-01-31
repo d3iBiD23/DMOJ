@@ -26,8 +26,8 @@ class Alumne{
         this.nota = nota;
     }
 
-    public boolean aprovat(float nota){
-        return nota >= 5;
+    public boolean aprovat(){
+        return this.nota >= 5;
     }
 }
 
@@ -38,12 +38,18 @@ public class Main {
 
         int n = sc.nextInt();
 
-        String nom = sc.next();
+        for (int i = 0; i < n; i++) {
 
-        String cognom = sc.next();
+            Alumne a = new Alumne(sc.next(), sc.next(), sc.nextFloat());
 
-        float nota = sc.nextFloat();
+            if (a.aprovat()){
+                System.out.println(a.getNom() + " " + a.getCognom() + ": " + "aprova");
+            }else {
+                System.out.println(a.getNom() + " " + a.getCognom() + ": " + "suspèn");
+            }
+        }
 
+        sc.close();
 
     }
 }
