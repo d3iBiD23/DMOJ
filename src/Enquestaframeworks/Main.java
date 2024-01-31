@@ -31,7 +31,6 @@ public class Main {
         System.out.println("S'ha registrat la resposta: " + resposta2);
         System.out.println("Gracies per contestar");
     }
-
     private static String iniciEnquesta() {
         return "Benvingut a l'enquesta.";
     }
