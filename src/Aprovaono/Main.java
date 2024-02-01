@@ -29,6 +29,14 @@ class Alumne{
     public boolean aprovat(){
         return this.nota >= 5;
     }
+
+    public String NotaMensaje()
+    {
+        if (this.aprovat()) {
+            return this.getNom() + " " + this.getCognom() + ": " + "aprova";
+        }
+        return this.getNom() + " " + this.getCognom() + ": " + "suspèn";
+    }
 }
 
 public class Main {
@@ -42,11 +50,7 @@ public class Main {
 
             Alumne a = new Alumne(sc.next(), sc.next(), sc.nextFloat());
 
-            if (a.aprovat()){
-                System.out.println(a.getNom() + " " + a.getCognom() + ": " + "aprova");
-            }else {
-                System.out.println(a.getNom() + " " + a.getCognom() + ": " + "suspèn");
-            }
+            System.out.println(a.NotaMensaje());
         }
 
         sc.close();
