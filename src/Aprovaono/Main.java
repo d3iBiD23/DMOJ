@@ -30,7 +30,7 @@ class Alumne{
         return this.nota >= 5;
     }
 
-    public String NotaMensaje()
+    public String notaMissatge()
     {
         if (this.aprovat()) {
             return this.getNom() + " " + this.getCognom() + ": " + "aprova";
@@ -50,7 +50,7 @@ public class Main {
 
             Alumne a = new Alumne(sc.next(), sc.next(), sc.nextFloat());
 
-            System.out.println(a.NotaMensaje());
+            System.out.println(a.notaMissatge());
         }
 
         sc.close();
