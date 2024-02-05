@@ -11,15 +11,19 @@ public class Main {
         float acc = 0;
 
         while (sc.hasNext()) {
+
             String operador = sc.next();
+
             if (operador.equals("END")) {
                 break;
             }
+
             float numero = sc.nextFloat();
+
             acc = operacion(operador, numero, acc);
+
             System.out.println(acc);
         }
-
     }
     public static float operacion(String operador, float numero, float acc) {
         switch (operador) {

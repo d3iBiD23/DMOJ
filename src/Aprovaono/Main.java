@@ -16,10 +16,6 @@ class Alumne{
         return cognom;
     }
 
-    public float getNota() {
-        return nota;
-    }
-
     public Alumne(String nom, String cognom, float nota) {
         this.nom = nom;
         this.cognom = cognom;
