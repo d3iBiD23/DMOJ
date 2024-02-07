@@ -33,7 +33,7 @@ public class Main {
         Calculadora calc = new Calculadora();
 
         String operador = sc.next();
-//
+
         if (operador.equals("END")){
             System.out.println(calc.getAcc());
         }
