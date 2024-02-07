@@ -26,13 +26,52 @@ class Robot{
         this.orientacio = orientacio;
     }
     public void girDreta(){
-
+        switch (orientacio){
+            case 'N':
+                orientacio = 'E';
+                break;
+            case 'E':
+                orientacio = 'S';
+                break;
+            case 'S':
+                orientacio = 'W';
+                break;
+            case 'W':
+                orientacio = 'N';
+                break;
+        }
     }
     public void girEsq(){
-
+        switch (orientacio) {
+            case 'N':
+                orientacio = 'W';
+                break;
+            case 'E':
+                orientacio = 'N';
+                break;
+            case 'S':
+                orientacio = 'E';
+                break;
+            case 'W':
+                orientacio = 'S';
+                break;
+        }
     }
     public void endavant(){
-
+        switch (orientacio) {
+            case 'N':
+                coordY++;
+                break;
+            case 'E':
+                coordX++;
+                break;
+            case 'S':
+                coordY--;
+                break;
+            case 'W':
+                coordX--;
+                break;
+        }
     }
 }
 public class Main {
@@ -46,10 +85,27 @@ public class Main {
 
         char orientacio = sc.next().charAt(0);
 
-        String ordre = sc.nextLine();
+        String ordre = sc.next();
 
         Robot r = new Robot(x, y, orientacio);
 
+        procesarInstruccions(r, ordre);
 
+        System.out.println("{" + r.getCoordX() + ", " + r.getCoordY() + "}");
+        System.out.println(r.getOrientacio());
+
+        sc.close();
+    }
+
+    public static void procesarInstruccions(Robot r, String ordre) {
+        for (char instruction : ordre.toCharArray()) {
+            if (instruction == 'A') {
+                r.endavant();
+            } else if (instruction == 'R') {
+                r.girDreta();  // Use girDreta() for 'R'
+            } else if (instruction == 'L') {
+                r.girEsq();  // Use girEsq() for 'L'
+            }
+        }
     }
 }
