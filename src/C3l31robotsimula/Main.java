@@ -6,7 +6,7 @@ import java.util.Scanner;
 class Robot{
     private int coordX;
     private int coordY;
-    private String orientacio;
+    private char orientacio;
 
     public int getCoordX() {
         return coordX;
@@ -16,11 +16,11 @@ class Robot{
         return coordY;
     }
 
-    public String getOrientacio() {
+    public char getOrientacio() {
         return orientacio;
     }
 
-    public Robot(int coordX, int coordY, String orientacio) {
+    public Robot(int coordX, int coordY, char orientacio) {
         this.coordX = coordX;
         this.coordY = coordY;
         this.orientacio = orientacio;
@@ -44,7 +44,7 @@ public class Main {
 
         int y = sc.nextInt();
 
-        String orientacio = sc.next();
+        char orientacio = sc.next().charAt(0);
 
         String ordre = sc.nextLine();
 
