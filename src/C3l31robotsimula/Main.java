@@ -102,9 +102,9 @@ public class Main {
             if (instruction == 'A') {
                 r.endavant();
             } else if (instruction == 'R') {
-                r.girDreta();  // Use girDreta() for 'R'
+                r.girDreta();  // Use girDreta() for R
             } else if (instruction == 'L') {
-                r.girEsq();  // Use girEsq() for 'L'
+                r.girEsq();  // Use girEsq() for L
             }
         }
     }
