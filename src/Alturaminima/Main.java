@@ -14,9 +14,9 @@ public class Main {
 
 
         for (int i = 0; i < qtyNens; i++){
-            float altura = sc.nextFloat();
 
-            arrayNens[i] = altura;
+            arrayNens[i] = sc.nextFloat();
+
         }
 
         float alturaMin = sc.nextFloat();
