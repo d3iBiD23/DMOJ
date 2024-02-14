@@ -21,12 +21,8 @@ public class Main {
 
         float alturaMin = sc.nextFloat();
 
-        for (int i = 0; i < qtyNens; i++){
-            if (arrayNens[i] < alturaMin){
-                System.out.println("NO");
-            }else {
-                System.out.println("SI");
-            }
+        for (float a: arrayNens){
+            System.out.println(a >= alturaMin ? "SI" : "NO");
         }
 
         sc.close();

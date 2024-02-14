@@ -11,10 +11,8 @@ public class Main {
         char lletra = sc.nextLine().charAt(0);
 
         String frase = sc.nextLine();
-
-        int resultat = contarLletres(lletra, frase);
-
-        System.out.println(resultat);
+        
+        System.out.println(contarLletres(lletra, frase));
 
     }
 
