@@ -12,21 +12,16 @@ public class Main {
 
         String frase = sc.nextLine();
         
-        System.out.println(contarLletres(lletra, frase));
-
-    }
-
-    private static int contarLletres(char lletra, String frase){
-        char[] array = frase.toCharArray();
+        char[] lletres = frase.toCharArray();
 
         int contador = 0;
 
-        for (char c : array){
-            if (lletra == c) {
+        for (char c : lletres){
+            if (lletra == c){
                 contador++;
             }
         }
 
-        return contador;
+        System.out.println(contador);
     }
 }
