@@ -14,9 +14,7 @@ public class Main {
 
         for (int i = 0; i < qtyNum; i++){
 
-            int numero = sc.nextInt();
-
-            arrayNums[i] = numero;
+            arrayNums[i] = sc.nextInt();
         }
 
         int ultimElement = arrayNums[arrayNums.length - 1];
