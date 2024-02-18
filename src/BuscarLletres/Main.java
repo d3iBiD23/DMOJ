@@ -11,17 +11,16 @@ public class Main {
         char lletra = sc.nextLine().charAt(0);
 
         String frase = sc.nextLine();
-        
-        char[] lletres = frase.toCharArray();
+
+        char[] paraules = frase.toCharArray();
 
         int contador = 0;
 
-        for (char c : lletres){
-            if (lletra == c){
+        for (char c : paraules){
+            if (c == lletra){
                 contador++;
             }
         }
-
         System.out.println(contador);
     }
 }
