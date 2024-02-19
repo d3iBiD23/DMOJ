@@ -42,7 +42,7 @@ public class Main {
         System.out.println("La paraula més curta és: " + min + " (" + min.length() + " lletres).");
     }
     private static void trobarLongitudParaula(String[] paraules, int longitud){
-        String paraula = "";
+        String paraula = " ";
         boolean trobat = false;
 
         for (String p : paraules){
