@@ -64,10 +64,9 @@ public class Main {
                         System.out.print('2');
                         break;
                     default:
-                        System.out.print(c);
+                        System.out.print(Character.isUpperCase(c) ? Character.toLowerCase(c) : c);
                 }
             }
-            System.out.println();
         }
     }
 }
