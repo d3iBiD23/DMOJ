@@ -13,7 +13,7 @@ public class Main {
         int acumulador = 0;
 
         for (int i = 1; i < cadena.length(); i += 2){
-            acumulador+=Character.getNumericValue(cadena.charAt(i));
+            acumulador += Character.getNumericValue(cadena.charAt(i));
         }
 
         System.out.println(acumulador);

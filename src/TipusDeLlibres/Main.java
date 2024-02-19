@@ -12,22 +12,24 @@ public class Main {
 
         sc.nextLine();
 
-        String[] nomLlibres = sc.nextLine().split("\\s+");
+        String[] llibres = sc.nextLine().split("\\s+");
 
-        int[] qtyTipusL = new int[nomLlibres.length];
+        int[] llibresComprats = new int[llibres.length];
 
         int qtyMenys = Integer.MAX_VALUE;
 
-        for (int i = 0; i < nomLlibres.length; i++){
-            qtyTipusL[i] = sc.nextInt();
-            if (qtyTipusL[i] < qtyMenys){
-                qtyMenys = qtyTipusL[i];
+        for (int i = 0; i < llibres.length; i++){
+            llibresComprats[i] = sc.nextInt();
+            if (llibresComprats[i] < qtyMenys){
+                qtyMenys = llibresComprats[i];
             }
         }
+
         System.out.println("el llistat de llibres que menys tenim són:");
-        for (int i = 0; i < nomLlibres.length; i++){
-            if (qtyTipusL[i] == qtyMenys){
-                System.out.println(nomLlibres[i] + " " + qtyMenys);
+
+        for (int i = 0; i < llibres.length; i++){
+            if (llibresComprats[i] == qtyMenys){
+                System.out.println(llibres[i] + " " + qtyMenys);
             }
         }
     }

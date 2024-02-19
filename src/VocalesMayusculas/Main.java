@@ -8,17 +8,16 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.ENGLISH);
 
-        while (sc.hasNextLine()) {
+        while (sc.hasNextLine()){
             String frase = sc.nextLine();
 
             if (frase.equals("END")){
                 break;
             }
 
-            char[] frase1 = frase.toCharArray();
-
-            for (char c : frase1) {
-                switch (c) {
+            char[] array = frase.toCharArray();
+            for (char c : array){
+                switch (c){
                     case 'a':
                         c = 'A';
                         break;
@@ -37,8 +36,9 @@ public class Main {
                 }
                 System.out.print(c);
             }
+
             if (!frase.equals("END")){
-                System.out.println();
+                System.out.println();;
             }
         }
         sc.close();

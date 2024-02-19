@@ -12,15 +12,16 @@ public class Main {
 
         String frase = sc.nextLine();
 
-        char[] paraules = frase.toCharArray();
+        char[] lletres = frase.toCharArray();
 
-        int contador = 0;
+        int acumulador = 0;
 
-        for (char c : paraules){
+        for (char c : lletres){
             if (c == lletra){
-                contador++;
+                acumulador++;
             }
         }
-        System.out.println(contador);
+
+        System.out.println(acumulador);
     }
 }
