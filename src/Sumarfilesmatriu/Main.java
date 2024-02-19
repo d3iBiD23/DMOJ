@@ -19,7 +19,7 @@ public class Main {
 
             for (int j=0; j < m; j++){
                 array[i][j] = sc.nextInt();
-                resultatSuma = resultatSuma + array[i][j];
+                resultatSuma += array[i][j];
 
             }
             System.out.println(resultatSuma);
