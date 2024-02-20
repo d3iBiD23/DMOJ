@@ -11,22 +11,17 @@ public class Main {
         char lletra = sc.nextLine().charAt(0);
 
         String frase = sc.nextLine();
-        
-        System.out.println(contarLletres(lletra, frase));
 
-    }
+        char[] lletres = frase.toCharArray();
 
-    private static int contarLletres(char lletra, String frase){
-        char[] array = frase.toCharArray();
+        int acumulador = 0;
 
-        int contador = 0;
-
-        for (char c : array){
-            if (lletra == c) {
-                contador++;
+        for (char c : lletres){
+            if (c == lletra){
+                acumulador++;
             }
         }
 
-        return contador;
+        System.out.println(acumulador);
     }
 }

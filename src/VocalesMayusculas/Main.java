@@ -8,15 +8,39 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.ENGLISH);
 
-        String texto = sc.nextLine();
+        while (sc.hasNextLine()){
+            String frase = sc.nextLine();
 
-        boolean end = false;
-
-        while (end){
-            if (texto.equals("END")){
+            if (frase.equals("END")){
                 break;
             }
-        }
 
+            char[] array = frase.toCharArray();
+            for (char c : array){
+                switch (c){
+                    case 'a':
+                        c = 'A';
+                        break;
+                    case 'e':
+                        c = 'E';
+                        break;
+                    case 'i':
+                        c = 'I';
+                        break;
+                    case 'o':
+                        c = 'O';
+                        break;
+                    case 'u':
+                        c = 'U';
+                        break;
+                }
+                System.out.print(c);
+            }
+
+            if (!frase.equals("END")){
+                System.out.println();;
+            }
+        }
+        sc.close();
     }
 }
