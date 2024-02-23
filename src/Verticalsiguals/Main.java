@@ -8,54 +8,52 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.ENGLISH);
 
-        int f = sc.nextInt();
-        int c = sc.nextInt();
+        int files = sc.nextInt();
+        int columnes = sc.nextInt();
 
-        int[][] matriu = new int[f][c];
+        int[][] m = new int[files][columnes];
 
-
-        for (int i=0; i < f; i++){
-
-            for (int j=0; j < c; j++){
-                matriu[i][j] = sc.nextInt();
-
+        for (int i = 0; i < files; i++){
+            for (int j = 0; j < columnes; j++){
+                m[i][j] = sc.nextInt();
             }
         }
-        int columnaIgual = verificarColumnaIgual(matriu);
 
-        if (columnaIgual != -1) {
-            System.out.println("La columna " + columnaIgual + " té tots els números iguals.");
-        } else {
+        int columesIguals = verticalsIguals(m);
+
+        if (columesIguals != -1){
+            System.out.println("La columna " + columesIguals + " té tots els números iguals.");
+        }else {
             System.out.println("No hi ha cap columna amb els números iguals.");
         }
-
     }
-    private static int verificarColumnaIgual(int[][] matriu) {
-        int fila = matriu.length;
-        int columnas = matriu[0].length;
 
-        if (fila == 1) {
+    private static int verticalsIguals(int[][] matriu){
+
+        int fila = matriu.length;
+        int columnes = matriu[0].length;
+
+        if (fila == 1){
             int valorAComparar = matriu[0][0];
-            for (int col = 1; col < columnas; col++) {
-                if (matriu[0][col] != valorAComparar) {
+
+            for (int col = 1; col < columnes; col++){
+                if (matriu[0][col] != valorAComparar){
                     return -1;
                 }
             }
             return 0;
         }
-
-        for (int col = 0; col < columnas; col++) {
+        for (int col = 0; col < columnes; col++){
             int valorAComparar = matriu[0][col];
 
-            for (int f = 1; f < fila; f++) {
-                if (matriu[f][col] != valorAComparar) {
+            for (int f = 1; f < fila; f++){
+                if (matriu[f][col] != valorAComparar){
                     break;
                 } else if (f == fila - 1) {
                     return col;
                 }
             }
         }
-
         return -1;
     }
 }

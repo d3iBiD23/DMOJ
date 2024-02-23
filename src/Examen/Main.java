@@ -21,18 +21,25 @@ public class Main {
     }
     private static void compararLinies(String[] fila1, String[] fila2, int posicio){
 
+        if (fila1[posicio].charAt(0) == fila2[posicio].charAt(0)){
+            System.out.println("La paraula a la posició " + posicio + " comença per la mateixa lletra a les dues línies.");
+        }else {
+            System.out.println("La paraula a la posició " + posicio + " comença per lletres diferents a les dues línies.");
+        }
+
+        boolean esIgual = true;
+
         for (int i = 0; i < fila1.length; i++){
-            if (fila1[posicio].charAt(0) == fila2[posicio].charAt(0)){
-                System.out.println("La paraula a la posició " + posicio + " comença per la mateixa lletra a les dues línies.");
-            }else {
-                System.out.println("La paraula a la posició " + posicio + " comença per lletres diferents a les dues línies.");
+
+            if (!fila1[i].equals(fila2[i])) {
+                esIgual = false;
+                break;
             }
-            if (fila1[i].equals(fila2[i])){
-                System.out.println("Totes les paraules són les mateixes.");
-            }else {
-                System.out.println("Les paraules no són les mateixes.");
-            }
-            break;
+        }
+        if (esIgual){
+            System.out.println("Totes les paraules són les mateixes.");
+        }else {
+            System.out.println("Les paraules no són les mateixes.");
         }
     }
 }
