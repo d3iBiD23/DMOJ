@@ -19,6 +19,7 @@ public class Main {
             }else {
                 array.add(clau);
             }
+
         }
 
         boolean trobat = false;
