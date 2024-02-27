@@ -19,41 +19,27 @@ public class Main {
             }
         }
 
-        int columesIguals = verticalsIguals(m);
+        boolean esIgual = false;
 
-        if (columesIguals != -1){
-            System.out.println("La columna " + columesIguals + " té tots els números iguals.");
-        }else {
+        for (int j = 0; j < columnes; j++) {
+            esIgual = true;
+
+            for (int i = 1; i < files; i++) {
+                int anterior = m[i - 1][j];
+                int actual = m[i][j];
+
+                if (actual != anterior) {
+                    esIgual = false;
+                    break;
+                }
+            }
+            if (esIgual){
+                System.out.println("La columna " + j +  " té tots els números iguals.");
+                break;
+            }
+        }
+        if (!esIgual){
             System.out.println("No hi ha cap columna amb els números iguals.");
         }
-    }
-
-    private static int verticalsIguals(int[][] matriu){
-
-        int fila = matriu.length;
-        int columnes = matriu[0].length;
-
-        if (fila == 1){
-            int valorAComparar = matriu[0][0];
-
-            for (int col = 1; col < columnes; col++){
-                if (matriu[0][col] != valorAComparar){
-                    return -1;
-                }
-            }
-            return 0;
-        }
-        for (int col = 0; col < columnes; col++){
-            int valorAComparar = matriu[0][col];
-
-            for (int f = 1; f < fila; f++){
-                if (matriu[f][col] != valorAComparar){
-                    break;
-                } else if (f == fila - 1) {
-                    return col;
-                }
-            }
-        }
-        return -1;
     }
 }

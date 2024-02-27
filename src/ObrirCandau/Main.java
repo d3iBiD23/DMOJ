@@ -21,8 +21,21 @@ public class Main {
             } else {
                 array.add(numero);
             }
-
         }
-        array.get(0);
+
+        boolean obre = false;
+
+        for (int i = 1; i < array.size() - 2; i++){
+            int actual = array.get(i);
+            int seguent = array.get(i+1);
+            int anterior = array.get(i-1);
+
+            if (clau == (anterior + actual) * seguent){
+                obre = true;
+                break;
+            }
+        }
+
+        System.out.println(obre);
     }
 }
