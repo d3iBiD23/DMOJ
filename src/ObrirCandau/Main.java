@@ -11,30 +11,31 @@ public class Main {
 
         int clau = sc.nextInt();
 
-        ArrayList<Integer> array = new ArrayList<Integer>();
+        ArrayList<Integer> array = new ArrayList<>();
 
-        while (true){
-            if (clau == -1){
+        while (true) {
+            int numero = sc.nextInt();
+
+            if (numero == -1) {
                 break;
-            }else {
-                array.add(clau);
+            } else {
+                array.add(numero);
             }
-
         }
 
-        boolean trobat = false;
+        boolean obre = false;
 
-        for (int i = 0; i < array.size() - 2; i++){
+        for (int i = 1; i < array.size() - 2; i++){
             int actual = array.get(i);
-            int suma = array.get(i+1);
-            int multi = array.get(i+2);
+            int seguent = array.get(i+1);
+            int anterior = array.get(i-1);
 
-
-            if (clau == (actual + suma) * multi){
-                trobat = true;
+            if (clau == (anterior + actual) * seguent){
+                obre = true;
                 break;
             }
         }
-        System.out.println(trobat);
+
+        System.out.println(obre);
     }
 }
