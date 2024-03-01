@@ -1,5 +1,6 @@
 package Examen;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -8,38 +9,35 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.ENGLISH);
 
-        String[] fila1 = sc.nextLine().split(" ");
+        int n = sc.nextInt();
 
-        String[] fila2 = sc.nextLine().split(" ");
+        String[][] matriu = new String[n][n];
 
-        int posicio = sc.nextInt();
 
-        compararLinies(fila1, fila2, posicio);
-
-        sc.close();
-
-    }
-    private static void compararLinies(String[] fila1, String[] fila2, int posicio){
-
-        if (fila1[posicio].charAt(0) == fila2[posicio].charAt(0)){
-            System.out.println("La paraula a la posició " + posicio + " comença per la mateixa lletra a les dues línies.");
-        }else {
-            System.out.println("La paraula a la posició " + posicio + " comença per lletres diferents a les dues línies.");
-        }
-
-        boolean esIgual = true;
-
-        for (int i = 0; i < fila1.length; i++){
-
-            if (!fila1[i].equals(fila2[i])) {
-                esIgual = false;
-                break;
+        for (int i=0; i<n; i++){
+            for (int j=0; j<n; j++){
+                matriu[i][j]= sc.next();
             }
         }
-        if (esIgual){
-            System.out.println("Totes les paraules són les mateixes.");
-        }else {
-            System.out.println("Les paraules no són les mateixes.");
+
+        int coordX = sc.nextInt();
+        int coordY = sc.nextInt();
+
+        boolean esCapicua = false;
+
+        String paraula = matriu[coordX][coordY];
+
+        char[] paraulaChar = paraula.toCharArray();
+
+        for (int i = 0; i < paraula.length(); i++){
+            for (int j = 0; j < i; j++){
+                if (paraula.charAt(i)==paraulaChar[j]){
+                    esCapicua=true;
+                    break;
+                }
+            }
         }
+
+        System.out.println(esCapicua);
     }
 }

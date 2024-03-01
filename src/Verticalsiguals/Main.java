@@ -34,7 +34,6 @@ public class Main {
                 }
             }
             if (esIgual){
-                System.out.println("La columna " + j +  " té tots els números iguals.");
                 break;
             }
         }
