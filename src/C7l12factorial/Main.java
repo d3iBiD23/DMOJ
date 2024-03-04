@@ -12,7 +12,6 @@ public class Main {
 
         System.out.println(calcularFactorial(n));
 
-
     }
     private static int calcularFactorial(int n){
         if (n <= 2){

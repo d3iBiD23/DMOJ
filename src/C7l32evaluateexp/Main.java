@@ -10,24 +10,55 @@ public class Main {
 
         String expressio = sc.nextLine();
 
-        // Dividir l'String en els operadors "+" i obtenir els sumands
-        String[] numeros1 = expressio.split("\\+");
-
-        int resultatP = 0;
-
-        for (String num : numeros1){
-            // Dividir cada sumand en els operadors "*" i multiplicar els valors
-            String[] factors = num.split("\\*");
-            int resultat = 1;
-
-            for (String factor : factors){
-                // Multiplicar cada factor convertit a Int
-                resultat *= Integer.parseInt(factor.trim());
+        System.out.println(evaluateExp(expressio));
+    }
+    private static int evaluateExp(String expressio){
+        int posicioUltimaSuma = expressio.lastIndexOf("+");
+        int posicioUltimaMulti = expressio.lastIndexOf("*");
+        if (posicioUltimaSuma == -1 && posicioUltimaMulti == -1){
+            // Caso BASE
+            return Integer.parseInt(expressio);
+        } else {
+            // CAS RECURSIU
+            if (posicioUltimaSuma == -1) {
+                // AQUI ENTREM SI NOMES N'HI HA  MULTIPLICACIONS
+                int resultat = 1;
+                // EN CAS DE QUE HI NO HAGI SUMES, PERO SI MULTPLICACIONS
+                String[] multiplicacions = expressio.split("\\*"); // ["123", "456"] // ["789", "12"]
+                for (String multi : multiplicacions) {
+                    resultat *= Integer.parseInt(multi);
+                }
+                return resultat;
+            } else if (posicioUltimaMulti == -1){
+                // AQUI ENTREM SI NOMÉS N'HI HA SUMES
+                int resultat = 0;
+                // EN CAS DE QUE NO HI HAGI SUMES, PERO SI MULTIPLICACIONS
+                String[] sumes = expressio.split("\\+"); // ["56.088", "9468"]
+                for (String sum : sumes) {
+                    resultat += Integer.parseInt(sum);
+                }
+                return resultat;
+            } else {
+                String[] sumes = expressio.split("\\+"); // ["123*456", "789*12"]
+                for (int i = 0; i < sumes.length; i++) {
+                    int posicionUltimaMultiDelSplit = sumes[i].lastIndexOf("*");
+                    if (!(posicionUltimaMultiDelSplit == -1)){
+                        // AQUI TENIM DIVERSOS NUMEROS AMB DIFERENTS MULTIPLICACIONS "123*456"
+                        String[] multiplicacions = sumes[i].split("\\*"); // ["123", "456"] // ["789", "12"]
+                        int resultat = 1;
+                        for (String multi : multiplicacions) {
+                            resultat *= Integer.parseInt(multi);
+                        }
+                        sumes[i] = Integer.toString(resultat);
+                    }
+                }
+                // sumes = ["56.088", "9468"]
+                int resultatFinal = 0;
+                for (String suma : sumes) {
+                    resultatFinal += Integer.parseInt(suma);
+                }
+                return resultatFinal;
             }
-
-            // Sumar el resultat parcial al resultat total
-            resultatP += resultat;
         }
-        System.out.println(resultatP);
     }
 }
