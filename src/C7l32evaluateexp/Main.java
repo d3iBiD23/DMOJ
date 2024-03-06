@@ -12,52 +12,47 @@ public class Main {
 
         System.out.println(evaluateExp(expressio));
     }
-    private static int evaluateExp(String expressio){
-        int posicioUltimaSuma = expressio.lastIndexOf("+");
-        int posicioUltimaMulti = expressio.lastIndexOf("*");
-        if (posicioUltimaSuma == -1 && posicioUltimaMulti == -1){
-            // Caso BASE
+    private static int evaluateExp(String expressio) {
+        int posicionUltimaSuma = expressio.lastIndexOf("+");
+        int posicionUltimaMulti = expressio.lastIndexOf("*");
+
+        if (posicionUltimaSuma == -1 && posicionUltimaMulti == -1) {
+            // CAS BASE
             return Integer.parseInt(expressio);
         } else {
             // CAS RECURSIU
-            if (posicioUltimaSuma == -1) {
-                // AQUI ENTREM SI NOMES N'HI HA  MULTIPLICACIONS
+            if (posicionUltimaSuma == -1) {
+                // AQUI ENTREM SI SOLAMENT N'HI HA MULTIPLICACIONS
                 int resultat = 1;
-                // EN CAS DE QUE HI NO HAGI SUMES, PERO SI MULTPLICACIONS
+                // EN CAS DE QUE NO HI HAGI SUMES, PERO SI MULTIPLICACIONS
                 String[] multiplicacions = expressio.split("\\*"); // ["123", "456"] // ["789", "12"]
-                for (String multi : multiplicacions) {
-                    resultat *= Integer.parseInt(multi);
+                for (String s : multiplicacions) {
+                    resultat *= Integer.parseInt(s);
                 }
                 return resultat;
-            } else if (posicioUltimaMulti == -1){
-                // AQUI ENTREM SI NOMÉS N'HI HA SUMES
+            } else if (posicionUltimaMulti == -1) {
+                // AQUI ENTREM SI SOLAMENT N'HI HA SUMAS
                 int resultat = 0;
                 // EN CAS DE QUE NO HI HAGI SUMES, PERO SI MULTIPLICACIONS
-                String[] sumes = expressio.split("\\+"); // ["56.088", "9468"]
-                for (String sum : sumes) {
-                    resultat += Integer.parseInt(sum);
+                String[] sumas = expressio.split("\\+"); // ["56.088", "9468"]
+                for (String s : sumas) {
+                    resultat += Integer.parseInt(s);
                 }
                 return resultat;
             } else {
-                String[] sumes = expressio.split("\\+"); // ["123*456", "789*12"]
-                for (int i = 0; i < sumes.length; i++) {
-                    int posicionUltimaMultiDelSplit = sumes[i].lastIndexOf("*");
-                    if (!(posicionUltimaMultiDelSplit == -1)){
+                String[] sumas = expressio.split("\\+"); // ["123*456", "789*12"]
+                for (int i = 0; i < sumas.length; i++) {
+                    int posicionUltimaMultiDelSplit = sumas[i].lastIndexOf("*");
+                    if (posicionUltimaMultiDelSplit != -1) {
                         // AQUI TENIM DIVERSOS NUMEROS AMB DIFERENTS MULTIPLICACIONS "123*456"
-                        String[] multiplicacions = sumes[i].split("\\*"); // ["123", "456"] // ["789", "12"]
-                        int resultat = 1;
-                        for (String multi : multiplicacions) {
-                            resultat *= Integer.parseInt(multi);
-                        }
-                        sumes[i] = Integer.toString(resultat);
+                        sumas[i] = String.valueOf(evaluateExp(sumas[i]));
                     }
                 }
-                // sumes = ["56.088", "9468"]
-                int resultatFinal = 0;
-                for (String suma : sumes) {
-                    resultatFinal += Integer.parseInt(suma);
+                int resultadoFinal = 0;
+                for (String sum : sumas) {
+                    resultadoFinal += evaluateExp(sum);
                 }
-                return resultatFinal;
+                return resultadoFinal;
             }
         }
     }
